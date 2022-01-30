@@ -1,0 +1,51 @@
+name:                lucid-hyperscript
+version:             0.1.0.0
+github:              "MonadicSystems/lucid-hyperscript"
+license:             BSD3
+author:              "Monadic Systems LLC"
+maintainer:          "tech@monadic.systems"
+copyright:           "2022 Monadic Systems LLC"
+
+extra-source-files:
+- README.md
+- ChangeLog.md
+
+# Metadata used when publishing your package
+synopsis:            Use _hyperscript with lucid
+category:            Web
+
+# To avoid duplicated efforts in documentation and dealing with the
+# complications of embedding Haddock markup inside cabal files, it is
+# common to point users to the README.md file.
+description:         Please see the README on GitHub at <https://github.com/MonadicSystems/lucid-hyperscript#readme>
+
+dependencies:
+- base >= 4.7 && < 5
+- lucid
+- template-haskell
+- text
+
+library:
+  source-dirs: src
+
+executables:
+  lucid-hyperscript-exe:
+    main:                Main.hs
+    source-dirs:         app
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - lucid-hyperscript
+
+tests:
+  lucid-hyperscript-test:
+    main:                Spec.hs
+    source-dirs:         test
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - lucid-hyperscript
