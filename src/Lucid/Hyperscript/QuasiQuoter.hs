@@ -4,11 +4,11 @@
 
 module Lucid.Hyperscript.QuasiQuoter (_hs, __) where
 
-import Data.Text (Text)
+import Data.Text (Text(..))
 import qualified Data.Text as Text
 import GHC.Exts (IsString (..))
 import qualified Language.Haskell.TH as TH
-import Language.Haskell.TH.Quote (QuasiQuoter (QuasiQuoter))
+import Language.Haskell.TH.Quote ( QuasiQuoter(QuasiQuoter) )
 import Lucid (script_, toHtml, type_)
 import Lucid.Base (makeAttribute)
 
